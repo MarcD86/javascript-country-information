@@ -1,0 +1,26 @@
+h1 {
+    text-align: center;
+}
+
+.countryImage {
+    width: 100px;
+}
+
+#africa {
+    color: blue;
+}
+#america {
+    color: green;
+}
+#asia {
+    color: red;
+}
+#europe {
+    color: yellow;
+}
+#oceania {
+    color: purple;
+}
+#notValid {
+    color: pink;
+}
