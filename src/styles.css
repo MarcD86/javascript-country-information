@@ -1,9 +1,8 @@
 h1 {
     text-align: center;
 }
-
-.countryImage {
-    width: 100px;
+.navigator a:after {
+    color: purple;
 }
 
 #africa {
@@ -23,4 +22,42 @@ h1 {
 }
 #notValid {
     color: pink;
+}
+.main-picture {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 20px);
+    margin: 10px;
+    border: 3px solid green;
+}
+
+.navigator a:link, .navigator a:visited {
+    text-decoration: none;
+    color: red;
+
+}
+
+.container ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.container-list {
+    margin: 20px;
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border: 6px solid blue;
+}
+
+.container ul li {
+    list-style: none;
+}
+
+.container ul img {
+    list-style: none;
+    width: 100px;
+    padding: 10px;
 }

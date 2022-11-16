@@ -5,6 +5,10 @@ const countryList = document.getElementById('country-list');
 
 //1. data fetchen
 
+console.log("test tekst")
+
+// const usernameInputField = document.getElementById('input-search');
+
 async function fetchDataCountries() {
     const URI = 'https://restcountries.com/v2/all'
     // const ENDPOINT = 'name'
@@ -14,17 +18,23 @@ async function fetchDataCountries() {
 
         response.data.sort ((a, b) => (a.population - b.population));
 
+
             response.data.map((country) => {
-                const itemName = document.createElement('li');
-                const itemFlag = document.createElement('img');
-                const itemPopulation = document.createElement('li');
-                //maakt die een class element aan die je in styles kunt gebruiken
+
+                const container = document.createElement('li')
+                container.setAttribute('class', 'container-list')
+                //country names;
+                const itemName = document.createElement('p');
                 itemName.setAttribute('class', 'countryName');
-                itemFlag.setAttribute('class', 'countryImage');
+                //flags
+                const itemPopulation = document.createElement('p');
                 itemPopulation.setAttribute('class', 'countryPopulation');
-                itemFlag.setAttribute('src', country.flag);
                 itemPopulation.textContent = "population of : " + country.population;
                 // sortPopulation(country.population)
+                const itemFlag = document.createElement('img');
+                itemFlag.setAttribute('class', 'countryImage');
+                itemFlag.setAttribute('src', country.flag);
+
 
                 switch(country.region) {
                     case "Africa":
@@ -49,9 +59,11 @@ async function fetchDataCountries() {
                 itemName.textContent = country.name;
 
                 // voeg alle items toe aan list
-                countryList.appendChild(itemName);
-                countryList.appendChild(itemFlag);
-                countryList.appendChild(itemPopulation);
+                container.appendChild(itemName);
+                container.appendChild(itemFlag);
+                container.appendChild(itemPopulation);
+
+                countryList.appendChild(container)
 
             })
     }
